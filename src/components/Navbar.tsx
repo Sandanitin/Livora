@@ -17,13 +17,13 @@ const Navbar = () => {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-sm border-b border-border z-50 shadow-[var(--elegant-shadow)]">
+    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-md border-b border-border z-50 shadow-lg transition-all duration-300">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
+        <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 text-xl font-bold text-primary hover:text-secondary transition-colors">
-            <Home className="w-6 h-6" />
-            <span>HomeLane</span>
+          <Link to="/" className="flex items-center gap-2 text-xl md:text-2xl font-bold text-primary hover:text-secondary transition-all duration-300 hover:scale-105">
+            <Home className="w-6 h-6 md:w-7 md:h-7" />
+            <span className="font-playfair">HomeLane</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -32,14 +32,14 @@ const Navbar = () => {
               <Link
                 key={link.path}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-secondary ${
-                  isActive(link.path) ? "text-secondary" : "text-foreground"
+                className={`text-sm font-medium transition-all duration-300 hover:text-secondary relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-secondary after:transition-all after:duration-300 ${
+                  isActive(link.path) ? "text-secondary after:w-full" : "text-foreground"
                 }`}
               >
                 {link.name}
               </Link>
             ))}
-            <Button variant="secondary" size="sm" asChild>
+            <Button variant="secondary" size="sm" className="hover:scale-105 transition-transform" asChild>
               <Link to="/contact">Get Free Estimate</Link>
             </Button>
           </div>

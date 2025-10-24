@@ -75,8 +75,8 @@ const ServicesGrid = () => {
           {services.map((service, index) => {
             const Icon = service.icon;
             return (
-              <Link key={index} to="/services">
-                <Card className="group hover:shadow-[var(--warm-glow)] transition-all duration-300 hover:-translate-y-1 overflow-hidden h-full">
+              <Link key={index} to="/services" className="group">
+                <Card className="hover-lift overflow-hidden h-full border-2 border-transparent hover:border-secondary/20 transition-all duration-300">
                   <CardContent className="p-0">
                     {service.image ? (
                       <div className="relative h-48 overflow-hidden">

@@ -35,7 +35,7 @@ const Testimonials = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
-            <Card key={index} className="hover:shadow-[var(--warm-glow)] transition-all duration-300">
+            <Card key={index} className="hover-lift border-2 border-transparent hover:border-secondary/20 transition-all duration-300">
               <CardContent className="p-6 space-y-4">
                 <div className="flex items-center gap-1">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
