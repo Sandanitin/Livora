@@ -6,7 +6,7 @@ const testimonials = [
     name: "Priya Sharma",
     location: "Mumbai",
     rating: 5,
-    text: "HomeLane transformed our kitchen into a modern masterpiece. The attention to detail and quality of work exceeded our expectations!",
+    text: "Livora transformed our kitchen into a modern masterpiece. The attention to detail and quality of work exceeded our expectations!",
   },
   {
     name: "Rajesh Kumar",

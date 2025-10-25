@@ -10,7 +10,7 @@ const Footer = () => {
           <div className="space-y-4">
             <div className="flex items-center gap-2 text-xl font-bold font-playfair">
               <Home className="w-6 h-6" />
-              <span>HomeLane</span>
+              <span>Livora</span>
             </div>
             <p className="text-primary-foreground/80 text-sm">
               Transform your home with our premium interior design services. Quality guaranteed.
@@ -66,7 +66,7 @@ const Footer = () => {
               </li>
               <li className="flex items-center gap-2 text-primary-foreground/80 text-sm">
                 <Mail className="w-4 h-4" />
-                <span>info@homelane.com</span>
+                <span>info@livora.com</span>
               </li>
               <li className="flex items-start gap-2 text-primary-foreground/80 text-sm">
                 <MapPin className="w-4 h-4 mt-1" />
@@ -78,7 +78,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/80 text-sm">
-            &copy; {new Date().getFullYear()} HomeLane. All rights reserved.
+            &copy; {new Date().getFullYear()} Livora. All rights reserved.
           </p>
         </div>
       </div>

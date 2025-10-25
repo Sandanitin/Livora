@@ -40,7 +40,7 @@ const About = () => {
         <section className="bg-gradient-to-br from-muted/50 to-background py-20">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto text-center space-y-4">
-              <h1 className="text-4xl md:text-6xl font-bold text-primary">About HomeLane</h1>
+              <h1 className="text-4xl md:text-6xl font-bold text-primary">About Livora</h1>
               <p className="text-lg text-muted-foreground">
                 Your trusted partner in creating beautiful, functional living spaces
               </p>
@@ -78,7 +78,7 @@ const About = () => {
               <Card className="shadow-[var(--elegant-shadow)]">
                 <CardContent className="p-8 space-y-4 text-foreground">
                   <p className="text-lg leading-relaxed">
-                    Founded in 2008, HomeLane has been transforming houses into homes for over 15 years. 
+                    Founded in 2008, Livora has been transforming houses into homes for over 15 years. 
                     What started as a small interior design studio has grown into one of the most trusted 
                     names in home interiors across India.
                   </p>

@@ -1,7 +1,8 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Home, Menu, X } from "lucide-react";
+import { Menu, X, Phone } from "lucide-react";
+import logoImage from "@/assets/Logo.jpeg";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,8 +23,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16 md:h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 text-xl md:text-2xl font-bold text-primary hover:text-secondary transition-all duration-300 hover:scale-105">
-            <Home className="w-6 h-6 md:w-7 md:h-7" />
-            <span className="font-playfair">HomeLane</span>
+            <img src={logoImage} alt="Livora Logo" className="h-8 w-auto md:h-10" />
+            <span className="font-playfair hidden sm:block">Livora</span>
           </Link>
 
           {/* Desktop Navigation */}
@@ -39,8 +40,12 @@ const Navbar = () => {
                 {link.name}
               </Link>
             ))}
-            <Button variant="secondary" size="sm" className="hover:scale-105 transition-transform" asChild>
-              <Link to="/contact">Get Free Estimate</Link>
+            <div className="hidden lg:flex items-center gap-4">
+              <Phone className="w-4 h-4 text-secondary" />
+              <span className="text-sm font-medium text-foreground">+1 (555) 123-4567</span>
+            </div>
+            <Button variant="premium" size="sm" className="hover:scale-105 transition-transform" asChild>
+              <Link to="/contact">Get Estimate</Link>
             </Button>
           </div>
 
@@ -69,7 +74,11 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
-              <Button variant="secondary" size="sm" asChild>
+              <div className="flex items-center gap-2 py-2">
+                <Phone className="w-4 h-4 text-secondary" />
+                <span className="text-sm font-medium text-foreground">+1 (555) 123-4567</span>
+              </div>
+              <Button variant="premium" size="sm" asChild>
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
                   Get Free Estimate
                 </Link>
