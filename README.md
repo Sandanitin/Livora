@@ -4,6 +4,18 @@
 
 Livora is a premium home interior design service offering complete solutions for modern homes. Our services include modular kitchens, wardrobes, study tables, wallpaper, lighting, false ceilings, bathrooms, and pooja units.
 
+## New Features
+
+### Furniture Gallery
+We've added a comprehensive furniture gallery showcasing our premium furniture designs:
+- Dining Tables
+- TV Units
+- Crockery Units
+- Beds
+- Dressing Tables
+
+Each category includes multiple design options with detailed descriptions and image search terms to help find the perfect furniture for your space.
+
 ## How to Work with This Code
 
 You can edit this application in several ways:

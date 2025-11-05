@@ -44,9 +44,7 @@ const Navbar = () => {
               <Phone className="w-4 h-4 text-secondary" />
               <span className="text-sm font-medium text-foreground">+1 (555) 123-4567</span>
             </div>
-            <Button variant="premium" size="sm" className="hover:scale-105 transition-transform" asChild>
-              <Link to="/contact">Get Estimate</Link>
-            </Button>
+            {/* Removed Get Estimate button */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -78,11 +76,7 @@ const Navbar = () => {
                 <Phone className="w-4 h-4 text-secondary" />
                 <span className="text-sm font-medium text-foreground">+1 (555) 123-4567</span>
               </div>
-              <Button variant="premium" size="sm" asChild>
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
-                  Get Free Estimate
-                </Link>
-              </Button>
+              {/* Removed Get Estimate button */}
             </div>
           </div>
         )}

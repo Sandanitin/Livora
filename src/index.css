@@ -107,4 +107,24 @@ All colors MUST be HSL.
   .gradient-text {
     @apply bg-gradient-to-r from-secondary to-accent bg-clip-text text-transparent;
   }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out;
+  }
+  
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+  
+  .shadow-2xl {
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15);
+  }
+  
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .backdrop-blur-2xl {
+    backdrop-filter: blur(24px);
+  }
 }

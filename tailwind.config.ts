@@ -95,6 +95,10 @@ export default {
         "glow": {
           "0%, 100%": { boxShadow: "0 0 20px rgba(212, 175, 55, 0.3)" },
           "50%": { boxShadow: "0 0 30px rgba(212, 175, 55, 0.5)" }
+        },
+        "pulse": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: ".5" }
         }
       },
       animation: {
@@ -105,6 +109,7 @@ export default {
         "scale-in": "scale-in 0.3s ease-out",
         "slide-up": "slide-up 0.4s ease-out",
         "glow": "glow 2s ease-in-out infinite",
+        "pulse": "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
     },
   },
