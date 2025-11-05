@@ -1,5 +1,6 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import { 
   MessageCircle, 
   Layout, 
@@ -97,14 +98,16 @@ const ProcessSteps = () => {
                   
                   <CardContent className="text-center pb-6">
                     <p className="text-muted-foreground text-sm mb-4">{step.description}</p>
-                    <Button 
-                      variant="outline" 
-                      size="sm" 
-                      className="group/button text-xs py-1.5 h-8 border-secondary/30 hover:border-secondary hover:bg-secondary/5"
-                    >
-                      Learn More
-                      <ArrowRight className="ml-1 w-3 h-3 transition-transform duration-300 group-hover/button:translate-x-0.5" />
-                    </Button>
+                    <Link to="/contact">
+                      <Button 
+                        variant="outline" 
+                        size="sm" 
+                        className="group/button text-xs py-1.5 h-8 border-secondary/30 hover:border-secondary hover:bg-secondary/5"
+                      >
+                        Learn More
+                        <ArrowRight className="ml-1 w-3 h-3 transition-transform duration-300 group-hover/button:translate-x-0.5" />
+                      </Button>
+                    </Link>
                   </CardContent>
                 </div>
               </Card>
@@ -113,10 +116,12 @@ const ProcessSteps = () => {
         </div>
         
         <div className="text-center mt-12">
-          <Button variant="premium" size="lg" className="group text-base font-semibold px-6 py-5 rounded-lg shadow-lg hover:shadow-xl">
-            Start Your Project
-            <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
-          </Button>
+          <Link to="/contact">
+            <Button variant="premium" size="lg" className="group text-base font-semibold px-6 py-5 rounded-lg shadow-lg hover:shadow-xl">
+              Start Your Project
+              <ArrowRight className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

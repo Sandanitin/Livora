@@ -100,7 +100,7 @@ const services = [
   }
 ];
 
-const ServicesGrid = () => {
+const ServicesGrid = ({ limit }: { limit?: number }) => {
   return (
     <section className="py-28 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-background to-secondary/3 -z-10"></div>
@@ -118,7 +118,7 @@ const ServicesGrid = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {services.map((service, index) => {
+          {services.slice(0, limit).map((service, index) => {
             const Icon = service.icon;
             return (
               <Card key={index} className="overflow-hidden h-full transition-all duration-500 hover:-translate-y-3 group border-0 bg-background/80 backdrop-blur-xl shadow-2xl hover:shadow-3xl rounded-3xl">
@@ -162,7 +162,7 @@ const ServicesGrid = () => {
                         </li>
                       ))}
                     </ul>
-                    <Link to="/services" className="block">
+                    <Link to="/contact" className="block">
                       <Button variant="outline" className="w-full group/button text-base py-5 rounded-xl border-2 font-medium hover:bg-secondary/10 transition-all duration-300 shadow-md hover:shadow-lg">
                         Learn More
                         <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover/button:translate-x-1" />
@@ -176,7 +176,7 @@ const ServicesGrid = () => {
         </div>
         
         <div className="text-center mt-16">
-          <Link to="/services">
+          <Link to="/Services">
             <Button variant="secondary" size="lg" className="group text-lg font-bold px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
               Explore All Services
               <ArrowRight className="ml-2 w-5 h-5 transition-transform group-hover:translate-x-1" />

@@ -13,7 +13,7 @@ const Home = () => {
         <HeroSection />
         <div className="py-28 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-background to-secondary/3 -z-10"></div>
-          <ServicesGrid />
+          <ServicesGrid limit={4} />
         </div>
         <ProcessSteps />
         <div className="py-16 bg-muted/10">

@@ -30,16 +30,13 @@ const HeroSection = () => {
           {/* Main Headline */}
           <div className="space-y-3">
             <h1 className="text-4xl md:text-6xl font-bold text-white font-playfair">
-              Transform Your <span className="text-secondary">Space</span>
+              Transform Your <span className="text-secondary">Space</span> with Smart & Stylish Interiors
             </h1>
-            <p className="text-xl text-white/90 font-light">
-              Crafting beautiful, functional interiors that reflect your unique style
-            </p>
           </div>
           
           {/* Description */}
           <p className="text-base md:text-lg text-white/90 max-w-xl leading-relaxed">
-            Durable metal springs in the seat give the sofa a springy comfort, allowing you to sit, relax and enjoy it for many years. Experience unparalleled quality and craftsmanship.
+            From elegant modular kitchens to custom wardrobes and space-saving furniture, Livora brings you modern designs crafted with precision, technology, and style.
           </p>
           
           {/* CTA Buttons */}
@@ -52,6 +49,17 @@ const HeroSection = () => {
             >
               <Link to="/services">
                 Our Services
+                <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
+              </Link>
+            </Button>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="group text-sm font-bold rounded-lg px-6 py-5 shadow-lg hover:shadow-xl transition-all border-white text-black hover:bg-white/10"
+              asChild
+            >
+              <Link to="/contact">
+                Get Free Consultation
                 <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
               </Link>
             </Button>

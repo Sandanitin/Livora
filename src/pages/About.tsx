@@ -3,14 +3,7 @@ import Footer from "@/components/Footer";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { Award, Users, Clock, Shield, Star, Heart, Target, ThumbsUp, ArrowRight } from "lucide-react";
-
-const stats = [
-  { icon: Users, label: "Happy Clients", value: "2000+" },
-  { icon: Award, label: "Projects Completed", value: "3500+" },
-  { icon: Clock, label: "Years Experience", value: "15+" },
-  { icon: Shield, label: "Quality Guarantee", value: "100%" }
-];
+import { Award, Users, Clock, Shield, Star, Heart, Target, ThumbsUp, ArrowRight, Eye } from "lucide-react";
 
 const values = [
   {
@@ -46,82 +39,65 @@ const About = () => {
           <div className="container mx-auto px-4 relative z-10">
             <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
               <h1 className="text-4xl md:text-6xl font-bold text-primary font-playfair">About Livora</h1>
-              <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Your trusted partner in creating beautiful, functional living spaces
+              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                At Livora, we believe your home should be a reflection of who you are elegant, functional, and uniquely yours. We specialize in modular kitchens, wardrobes, false ceilings, pooja rooms, dining tables, TV units, study tables, crockery units, beds, and dressing tables all designed to maximize space and elevate your everyday living.
               </p>
-              <div className="pt-4">
-                <div className="inline-flex items-center gap-2 bg-secondary/10 backdrop-blur-sm rounded-full py-2 px-6 border border-secondary/20">
-                  <Star className="w-5 h-5 text-secondary fill-secondary" />
-                  <span className="text-sm font-medium text-secondary">Premium Interior Design Since 2008</span>
-                </div>
-              </div>
+              
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-20 bg-gradient-to-b from-background to-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              {stats.map((stat, index) => {
-                const Icon = stat.icon;
-                return (
-                  <Card key={index} className="text-center hover:shadow-[var(--warm-glow)] transition-all duration-300 hover:-translate-y-2 group">
-                    <CardContent className="pt-8 pb-6 space-y-3">
-                      <div className="w-16 h-16 rounded-full bg-secondary/10 flex items-center justify-center mx-auto transition-all duration-300 group-hover:bg-secondary/20">
-                        <Icon className="w-8 h-8 text-secondary transition-transform duration-300 group-hover:scale-110" />
-                      </div>
-                      <div className="space-y-1">
-                        <p className="text-3xl font-bold text-primary animate-fade-in">{stat.value}</p>
-                        <p className="text-sm text-muted-foreground">{stat.label}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* Our Story */}
-        <section className="py-20 relative">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/5 to-secondary/5 -z-10"></div>
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto space-y-8">
-              <div className="text-center space-y-4 mb-12 animate-fade-in">
-                <h2 className="text-3xl md:text-4xl font-bold text-primary font-playfair">Our Story</h2>
-                <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
+        {/* Our Vision and Mission */}
+        <section className="py-28 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10 -z-10"></div>
+          <div className="container mx-auto px-4 relative z-10">
+            <div className="text-center mb-20 space-y-6 animate-fade-in">
+              <div className="inline-flex items-center gap-3 bg-secondary/10 backdrop-blur-sm rounded-full py-2 px-6 border border-secondary/20 mb-4">
+                <div className="w-3 h-3 rounded-full bg-secondary animate-pulse"></div>
+                <span className="text-sm font-bold text-secondary">Our Purpose</span>
               </div>
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <div className="space-y-6">
-                  <Card className="shadow-[var(--elegant-shadow)] border-0 bg-card/80 backdrop-blur-sm">
-                    <CardContent className="p-8 space-y-4 text-foreground">
-                      <p className="text-lg leading-relaxed">
-                        Founded in 2008, Livora has been transforming houses into homes for over 15 years. 
-                        What started as a small interior design studio has grown into one of the most trusted 
-                        names in home interiors across India.
-                      </p>
-                      <p className="text-lg leading-relaxed">
-                        Our journey has been driven by a simple belief: everyone deserves a beautiful home that 
-                        reflects their personality and lifestyle.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
-                <div className="space-y-6">
-                  <Card className="shadow-[var(--elegant-shadow)] border-0 bg-card/80 backdrop-blur-sm">
-                    <CardContent className="p-8 space-y-4 text-foreground">
-                      <p className="text-lg leading-relaxed">
-                        We combine innovative design, quality craftsmanship, 
-                        and affordable pricing to make dream homes accessible to all.
-                      </p>
-                      <p className="text-lg leading-relaxed">
-                        Today, with a team of experienced designers, skilled craftsmen, and dedicated support staff, 
-                        we continue to create spaces that our clients love and cherish.
-                      </p>
-                    </CardContent>
-                  </Card>
-                </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-primary font-playfair mb-6">Vision & Mission</h2>
+              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                The driving forces behind everything we create
+              </p>
+              <div className="w-32 h-1 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full"></div>
+            </div>
+            
+            <div className="max-w-6xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-8">
+                <Card className="group border-0 bg-background/80 backdrop-blur-xl shadow-2xl hover:shadow-3xl rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-3">
+                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10"></div>
+                  <CardContent className="p-10 space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-500">
+                        <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center transition-all duration-500 group-hover:bg-secondary/20 group-hover:rotate-12">
+                          <Eye className="w-6 h-6 text-secondary transition-all duration-500 group-hover:scale-110" />
+                        </div>
+                      </div>
+                      <h3 className="text-3xl font-bold text-primary font-playfair">Our Vision</h3>
+                    </div>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      To redefine modern living by offering intelligent, space-efficient, and aesthetically pleasing furniture solutions that make every home smarter and more comfortable.
+                    </p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="group border-0 bg-background/80 backdrop-blur-xl shadow-2xl hover:shadow-3xl rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-3">
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10"></div>
+                  <CardContent className="p-10 space-y-6">
+                    <div className="flex items-center gap-4">
+                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-500">
+                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-500 group-hover:bg-primary/20 group-hover:-rotate-12">
+                          <Target className="w-6 h-6 text-primary transition-all duration-500 group-hover:scale-110" />
+                        </div>
+                      </div>
+                      <h3 className="text-3xl font-bold text-primary font-playfair">Our Mission</h3>
+                    </div>
+                    <p className="text-lg text-muted-foreground leading-relaxed">
+                      To deliver customized interior solutions that combine creativity, practicality, and cutting-edge technology — making quality design accessible to everyone.
+                    </p>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </div>
