@@ -78,7 +78,7 @@ const Footer = () => {
 
         <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
           <p className="text-primary-foreground/80 text-sm">
-            &copy; {new Date().getFullYear()} Livora. All rights reserved. | Designed and Developed by <a href="https://www.vikrin.com/" target="_blank" rel="noopener noreferrer" className="text-secondary hover:underline">Vikrin</a>
+            &copy; {new Date().getFullYear()} Livora. All rights reserved.
           </p>
         </div>
       </div>

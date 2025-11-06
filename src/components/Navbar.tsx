@@ -42,7 +42,7 @@ const Navbar = () => {
             ))}
             <div className="hidden lg:flex items-center gap-4">
               <Phone className="w-4 h-4 text-secondary" />
-              <span className="text-sm font-medium text-foreground">+1 (555) 123-4567</span>
+              <span className="text-sm font-medium text-foreground">+91 7799188869</span>
             </div>
             {/* Removed Get Estimate button */}
           </div>
@@ -74,7 +74,7 @@ const Navbar = () => {
               ))}
               <div className="flex items-center gap-2 py-2">
                 <Phone className="w-4 h-4 text-secondary" />
-                <span className="text-sm font-medium text-foreground">+1 (555) 123-4567</span>
+                <span className="text-sm font-medium text-foreground">+91 7799188869</span>
               </div>
               {/* Removed Get Estimate button */}
             </div>
