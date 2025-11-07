@@ -61,26 +61,41 @@ const Footer = () => {
           {/* Contact Info */}
           <div>
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
-            <ul className="space-y-3">
-              <li className="flex items-center gap-2 text-primary-foreground/80 text-sm">
-                <Phone className="w-4 h-4" />
-                <span>+91 98765 43210</span>
-              </li>
-              <li className="flex items-center gap-2 text-primary-foreground/80 text-sm">
-                <Mail className="w-4 h-4" />
-                <span>info@livora.com</span>
-              </li>
-              <li className="flex items-start gap-2 text-primary-foreground/80 text-sm">
-                <MapPin className="w-4 h-4 mt-1" />
-                <span>123 Design Street, Mumbai, India</span>
-              </li>
-            </ul>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <MapPin className="h-5 w-5 mt-0.5 text-secondary flex-shrink-0" />
+                <p className="text-primary-foreground/80 text-sm">
+                  2-3-723, Flat no 303, SS Homes, 6 NO X roads, Amberpet, Hyderabad - 500013
+                </p>
+              </div>
+              <div className="flex items-center gap-3">
+                <Mail className="h-5 w-5 text-secondary flex-shrink-0" />
+                <a href="mailto:Contact@livora.design" className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm">
+                  Contact@livora.design
+                </a>
+              </div>
+              <div className="flex items-center gap-3">
+                <Phone className="h-5 w-5 text-secondary flex-shrink-0" />
+                <a href="tel:+917799188869" className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm">
+                  Mobile and WhatsApp: 77991 88869
+                </a>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div className="border-t border-primary-foreground/20 mt-8 pt-8 text-center">
-          <p className="text-primary-foreground/80 text-sm">
-            &copy; {new Date().getFullYear()} Livora. All rights reserved.
+        <div className="border-t border-primary-foreground/20 mt-12 pt-8 text-center text-sm text-primary-foreground/60">
+          <p>
+            &copy; {new Date().getFullYear()} Livora Interiors. All rights reserved. | 
+            Designed and Developed by{' '}
+            <a 
+              href="https://www.vikrin.com/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-secondary transition-colors"
+            >
+              Vikrin
+            </a>
           </p>
         </div>
       </div>
