@@ -8,9 +8,11 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Company Info */}
           <div className="space-y-4">
-            <div className="flex items-center gap-2 text-xl font-bold font-playfair">
-              <Home className="w-6 h-6" />
-              <span>Livora</span>
+            <div className="flex items-center gap-3">
+              <div className="bg-white p-2 rounded-md">
+                <img src="/logot.png" alt="Livora Logo" className="h-14 w-auto" />
+              </div>
+              <span className="text-2xl font-bold font-playfair"></span>
             </div>
             <p className="text-primary-foreground/80 text-sm">
               Transform your home with our premium interior design services. Quality guaranteed.

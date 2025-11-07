@@ -20,11 +20,11 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 w-full bg-background/95 backdrop-blur-md border-b border-border z-50 shadow-lg transition-all duration-300">
       <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16 md:h-20">
+        <div className="flex items-center justify-between h-20 md:h-24">
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 text-xl md:text-2xl font-bold text-primary hover:text-secondary transition-all duration-300 hover:scale-105">
-            <img src={logoImage} alt="Livora Logo" className="h-8 w-auto md:h-10" />
-            <span className="font-playfair hidden sm:block">Livora</span>
+            <img src="/logot.png" alt="Livora Logo" className="h-14 w-auto md:h-20" />
+            <span className="font-playfair hidden sm:block"></span>
           </Link>
 
           {/* Desktop Navigation */}
