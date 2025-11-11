@@ -166,7 +166,7 @@ const Services = () => {
                             </li>
                           ))}
                         </ul>
-                        <Link to="/services" className="block">
+                        <Link to="/contact" className="block">
                           <Button variant="outline" className="w-full group/button text-base py-5 rounded-xl border-2 font-medium hover:bg-secondary/10 transition-all duration-300 shadow-md hover:shadow-lg">
                             Learn More
                             <ArrowRight className="ml-2 w-4 h-4 transition-transform duration-300 group-hover/button:translate-x-1" />
