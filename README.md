@@ -16,6 +16,20 @@ We've added a comprehensive furniture gallery showcasing our premium furniture d
 
 Each category includes multiple design options with detailed descriptions and image search terms to help find the perfect furniture for your space.
 
+## EmailJS Integration
+
+This project now includes EmailJS integration for the contact form. To enable email functionality:
+
+1. Sign up at [EmailJS](https://www.emailjs.com/) 
+2. Create a new service and template
+3. Replace the placeholder values in `src/pages/Contact.tsx` with your actual EmailJS credentials:
+   ```typescript
+   const serviceID = "your_actual_service_id";
+   const templateID = "your_actual_template_id";
+   const publicKey = "your_actual_public_key";
+   ```
+4. The contact form will automatically use these credentials
+
 ## How to Work with This Code
 
 You can edit this application in several ways:
@@ -76,5 +90,3 @@ To deploy this project:
 ## Custom Domain
 
 You can connect a custom domain through your hosting provider's domain settings.
-
-# Livora

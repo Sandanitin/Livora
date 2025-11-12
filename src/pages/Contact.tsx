@@ -5,6 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, User, MessageSquare, ShieldCheck, FileText, Send, Navigation, Star } from "lucide-react";
+import emailjs from "@emailjs/browser";
+import { useRef, useState } from "react";
+import { toast } from "sonner";
 
 const contactInfo = [
   {
@@ -34,6 +37,47 @@ const contactInfo = [
 ];
 
 const Contact = () => {
+  const formRef = useRef<HTMLFormElement>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const sendEmail = (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    if (!formRef.current) {
+      setIsSubmitting(false);
+      return;
+    }
+
+    // EmailJS service configuration - Replace these with your actual EmailJS credentials
+    const serviceID = "YOUR_SERVICE_ID";
+    const templateID = "YOUR_TEMPLATE_ID";
+    const publicKey = "YOUR_PUBLIC_KEY";
+
+    emailjs
+      .sendForm(serviceID, templateID, formRef.current, publicKey)
+      .then(
+        (result) => {
+          console.log(result.text);
+          toast.success("Message sent successfully!", {
+            description: "We'll get back to you within 24 hours.",
+          });
+          if (formRef.current) {
+            formRef.current.reset();
+          }
+        },
+        (error) => {
+          console.log(error.text);
+          toast.error("Failed to send message", {
+            description: "Please try again later.",
+          });
+        }
+      )
+      .finally(() => {
+        setIsSubmitting(false);
+      });
+  };
+
   return (
     <div className="min-h-screen">
       <Navbar />
@@ -109,7 +153,7 @@ const Contact = () => {
                       <h3 className="text-3xl font-bold text-primary font-playfair mb-2">Send Us a Message</h3>
                       <p className="text-muted-foreground">We'll get back to you within 24 hours</p>
                     </div>
-                    <form className="space-y-8">
+                    <form ref={formRef} onSubmit={sendEmail} className="space-y-8">
                       <div className="space-y-2">
                         <label htmlFor="name" className="text-base font-semibold text-foreground flex items-center gap-3">
                           <div className="w-10 h-10 rounded-xl bg-secondary/15 flex items-center justify-center">
@@ -169,10 +213,20 @@ const Contact = () => {
                       
                       <Button 
                         type="submit" 
+                        disabled={isSubmitting}
                         className="w-full py-7 text-lg font-bold bg-gradient-to-r from-secondary to-accent hover:from-secondary/90 hover:to-accent transition-all duration-500 rounded-2xl group shadow-xl hover:shadow-2xl mt-6 transform hover:-translate-y-1"
                       >
-                        Send Message
-                        <Send className="ml-3 w-6 h-6 inline-block transition-transform group-hover:translate-x-2" />
+                        {isSubmitting ? (
+                          <>
+                            <span className="mr-2">Sending...</span>
+                            <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
+                          </>
+                        ) : (
+                          <>
+                            Send Message
+                            <Send className="ml-3 w-6 h-6 inline-block transition-transform group-hover:translate-x-2" />
+                          </>
+                        )}
                       </Button>
                     </form>
                   </CardContent>
