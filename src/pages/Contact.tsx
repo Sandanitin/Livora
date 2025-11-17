@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, Phone, MapPin, Clock, User, MessageSquare, ShieldCheck, FileText, Send, Navigation, Star } from "lucide-react";
-import emailjs from "@emailjs/browser";
 import { useRef, useState } from "react";
 import { toast } from "sonner";
+import { sendEmail } from "@/lib/email";
 
 const contactInfo = [
   {
@@ -40,7 +40,7 @@ const Contact = () => {
   const formRef = useRef<HTMLFormElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const sendEmail = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
@@ -49,33 +49,21 @@ const Contact = () => {
       return;
     }
 
-    // EmailJS service configuration - Replace these with your actual EmailJS credentials
-    const serviceID = "YOUR_SERVICE_ID";
-    const templateID = "YOUR_TEMPLATE_ID";
-    const publicKey = "YOUR_PUBLIC_KEY";
-
-    emailjs
-      .sendForm(serviceID, templateID, formRef.current, publicKey)
-      .then(
-        (result) => {
-          console.log(result.text);
-          toast.success("Message sent successfully!", {
-            description: "We'll get back to you within 24 hours.",
-          });
-          if (formRef.current) {
-            formRef.current.reset();
-          }
-        },
-        (error) => {
-          console.log(error.text);
-          toast.error("Failed to send message", {
-            description: "Please try again later.",
-          });
-        }
-      )
-      .finally(() => {
-        setIsSubmitting(false);
+    const result = await sendEmail(formRef.current);
+    
+    if (result.success) {
+      toast.success("Message sent successfully!", {
+        description: "We'll get back to you within 24 hours.",
       });
+      formRef.current?.reset();
+    } else {
+      console.error("Failed to send email:", result.error);
+      toast.error("Failed to send message", {
+        description: result.error?.message || "Please try again later.",
+      });
+    }
+    
+    setIsSubmitting(false);
   };
 
   return (
@@ -153,7 +141,7 @@ const Contact = () => {
                       <h3 className="text-3xl font-bold text-primary font-playfair mb-2">Send Us a Message</h3>
                       <p className="text-muted-foreground">We'll get back to you within 24 hours</p>
                     </div>
-                    <form ref={formRef} onSubmit={sendEmail} className="space-y-8">
+                    <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
                       <div className="space-y-2">
                         <label htmlFor="name" className="text-base font-semibold text-foreground flex items-center gap-3">
                           <div className="w-10 h-10 rounded-xl bg-secondary/15 flex items-center justify-center">
@@ -163,8 +151,10 @@ const Contact = () => {
                         </label>
                         <Input 
                           id="name" 
+                          name="from_name"
                           placeholder="Enter your full name" 
                           className="py-6 border-border focus:border-secondary focus:ring-secondary text-lg rounded-2xl transition-all duration-300 bg-background/70 backdrop-blur-sm border-2 focus:shadow-xl pl-6 shadow-md"
+                          required
                         />
                       </div>
                       
@@ -177,8 +167,10 @@ const Contact = () => {
                         </label>
                         <Input 
                           id="email" 
+                          name="reply_to"
                           type="email" 
                           placeholder="Enter your email" 
+                          required
                           className="py-6 border-border focus:border-secondary focus:ring-secondary text-lg rounded-2xl transition-all duration-300 bg-background/70 backdrop-blur-sm border-2 focus:shadow-xl pl-6 shadow-md"
                         />
                       </div>
@@ -192,7 +184,9 @@ const Contact = () => {
                         </label>
                         <Input 
                           id="subject" 
+                          name="subject"
                           placeholder="What is this regarding?" 
+                          required
                           className="py-6 border-border focus:border-secondary focus:ring-secondary text-lg rounded-2xl transition-all duration-300 bg-background/70 backdrop-blur-sm border-2 focus:shadow-xl pl-6 shadow-md"
                         />
                       </div>
@@ -206,7 +200,9 @@ const Contact = () => {
                         </label>
                         <Textarea 
                           id="message" 
+                          name="message"
                           placeholder="Tell us about your project or ask us a question..." 
+                          required
                           className="py-6 min-h-[180px] border-border focus:border-secondary focus:ring-secondary text-lg rounded-2xl transition-all duration-300 bg-background/70 backdrop-blur-sm border-2 focus:shadow-xl pl-6 shadow-md"
                         />
                       </div>
