@@ -3,22 +3,40 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    name: "Priya Sharma",
-    location: "Mumbai",
+    name: "Mrs. Kalpana",
+    location: "Amberpet, Hyderabad",
     rating: 5,
-    text: "Livora transformed our kitchen into a modern masterpiece. The attention to detail and quality of work exceeded our expectations!",
+    text: "The team at Livora transformed my home with exceptional attention to detail. Their design ideas were both modern and functional.",
   },
   {
-    name: "Rajesh Kumar",
-    location: "Delhi",
+    name: "Mr. Krishna",
+    location: "Uppal, Hyderabad",
     rating: 5,
-    text: "Excellent service and competitive pricing. Our entire home interior was completed on time and within budget.",
+    text: "Outstanding workmanship and professional service. They delivered my project on time and within the estimated budget.",
   },
   {
-    name: "Anita Desai",
-    location: "Bangalore",
+    name: "Mrs. Vasantha",
+    location: "Dilsukhnagar, Hyderabad",
     rating: 5,
-    text: "Professional team with creative ideas. They understood our requirements perfectly and delivered exactly what we wanted.",
+    text: "Very satisfied with the quality of materials and the team's commitment to perfection. My home looks exactly as I envisioned.",
+  },
+  {
+    name: "Mr. Harikrishna",
+    location: "Patancheru, Hyderabad",
+    rating: 5,
+    text: "Excellent communication throughout the project. The team was always available to address my concerns and suggestions.",
+  },
+  {
+    name: "Mrs. Harathi",
+    location: "Moulali, Hyderabad",
+    rating: 5,
+    text: "The interior design exceeded my expectations. The team's creativity and attention to detail made all the difference.",
+  },
+  {
+    name: "Mrs. Santoshi Sandy",
+    location: "Malakpet, Hyderabad",
+    rating: 5,
+    text: "Professional and reliable service. The team completed the work as promised and the results are simply amazing.",
   },
 ];
 
@@ -33,7 +51,7 @@ const Testimonials = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="hover-lift border-2 border-transparent hover:border-secondary/20 transition-all duration-300">
               <CardContent className="p-6 space-y-4">
