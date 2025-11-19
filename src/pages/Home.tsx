@@ -3,7 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import ServicesGrid from "@/components/ServicesGrid";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-import ProcessSteps from "@/components/ProcessSteps";
+// ProcessSteps component has been removed
 
 const Home = () => {
   return (
@@ -11,12 +11,12 @@ const Home = () => {
       <Navbar />
       <main className="pt-16">
         <HeroSection />
-        <div className="relative overflow-hidden">
+        <div className="py-10 relative overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-background to-secondary/3 -z-10"></div>
           <ServicesGrid limit={4} />
         </div>
-        <ProcessSteps />
-        <div className="bg-muted/10">
+        {/* <ProcessSteps /> */} {/* Removed ProcessSteps component */}
+        <div className="py-8 bg-muted/10">
           <Testimonials />
         </div>
       </main>

@@ -102,10 +102,10 @@ const services = [
 
 const ServicesGrid = ({ limit }: { limit?: number }) => {
   return (
-    <section className="py-16 relative overflow-hidden">
+    <section className="py-28 relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-primary/3 via-background to-secondary/3 -z-10"></div>
       <div className="container mx-auto px-4 relative z-10">
-        <div className="text-center mb-12 space-y-4 animate-fade-in">
+        <div className="text-center mb-20 space-y-6 animate-fade-in">
           <div className="inline-flex items-center gap-2 bg-secondary/10 rounded-full py-2 px-6 mb-4">
             <div className="w-2 h-2 rounded-full bg-secondary"></div>
             <span className="text-sm font-medium text-secondary">Complete Solutions</span>
@@ -175,7 +175,7 @@ const ServicesGrid = ({ limit }: { limit?: number }) => {
           })}
         </div>
         
-        <div className="text-center mt-12">
+        <div className="text-center mt-8">
           <Link to="/Services">
             <Button variant="secondary" size="lg" className="group text-lg font-bold px-8 py-6 rounded-full shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
               Explore All Services
