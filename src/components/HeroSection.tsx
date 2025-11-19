@@ -91,7 +91,7 @@ const HeroSection = () => {
             <div className="bg-white/10 backdrop-blur-sm rounded-lg p-2 border border-white/10 text-center" role="listitem">
               <div className="flex flex-col items-center gap-1">
                 <Clock className="w-4 h-4 text-blue-400" aria-hidden="true" />
-                <dt className="font-semibold text-white text-xs">7-Day</dt>
+                <dt className="font-semibold text-white text-xs">30 to 45 Days</dt>
                 <dd className="text-[9px] text-white/80">Installation</dd>
               </div>
             </div>
