@@ -13,26 +13,26 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Call Us",
-    details: ["+91 98765 43210", "+91 98765 43211"],
+    details: ["+91 77991 88869"],
     description: "Mon-Sat, 9:00 AM - 7:00 PM"
   },
   {
     icon: Mail,
     title: "Email Us",
-    details: ["info@livora.com", "support@livora.com"],
+    details: ["contact@livora.design"],
     description: "We'll respond within 24 hours"
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    details: ["123 Design Street", "Mumbai, Maharashtra 400001"],
+    details: ["Flat No 303, SS Homes", "2-3-723, 6 No X Roads, Amberpet", "Hyderabad - 500013"],
     description: "India"
   },
   {
     icon: Clock,
     title: "Working Hours",
-    details: ["Monday - Saturday", "9:00 AM - 7:00 PM"],
-    description: "Sunday Closed"
+    details: ["Every Day", "9:00 AM - 7:00 PM"],
+    description: "Always available to serve you"
   }
 ];
 
@@ -81,26 +81,26 @@ const Contact = () => {
             "@id": "https://livora.design#organization",
             "name": "Livora Interior Design",
             "url": "https://livora.design",
-            "telephone": "+91 98765 43210",
-            "email": "info@livora.com",
+            "telephone": "+91 77991 88869",
+            "email": "contact@livora.design",
             "address": {
               "@type": "PostalAddress",
-              "streetAddress": "123 Design Street",
+              "streetAddress": "Flat No 303, SS Homes, 2-3-723, 6 No X Roads, Amberpet",
               "addressLocality": "Hyderabad",
               "addressRegion": "Telangana",
-              "postalCode": "500001",
+              "postalCode": "500013",
               "addressCountry": "IN"
             },
             "contactPoint": [
               {
                 "@type": "ContactPoint",
-                "telephone": "+91 98765 43210",
+                "telephone": "+91 77991 88869",
                 "contactType": "customer service",
                 "availableLanguage": ["English", "Hindi", "Telugu"],
                 "hoursAvailable": [
                   {
                     "@type": "OpeningHoursSpecification",
-                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+                    "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
                     "opens": "09:00",
                     "closes": "19:00"
                   }
@@ -108,7 +108,7 @@ const Contact = () => {
               },
               {
                 "@type": "ContactPoint",
-                "email": "info@livora.com",
+                "email": "contact@livora.design",
                 "contactType": "customer service",
                 "availableLanguage": ["English", "Hindi", "Telugu"]
               }
