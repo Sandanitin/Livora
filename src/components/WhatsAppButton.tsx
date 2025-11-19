@@ -1,6 +1,6 @@
 const WhatsAppButton = () => {
   // WhatsApp link with prefilled message
-  const phoneNumber = "9059719519"; // Using the user's WhatsApp number from memory
+  const phoneNumber = "7799188869"; // Updated WhatsApp number
   const message = "Hello, I'm interested in your interior design services. Could you please provide more information?";
   const whatsappLink = `https://wa.me/91${phoneNumber}?text=${encodeURIComponent(message)}`;
 
