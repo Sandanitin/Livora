@@ -30,143 +30,220 @@ const values = [
 
 const About = () => {
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      <main className="pt-16">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-primary/5 to-secondary/5 py-20 overflow-hidden">
-          <div className="absolute inset-0 opacity-50" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}}></div>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
-              <h1 className="text-4xl md:text-6xl font-bold text-primary font-playfair">About Livora</h1>
-              <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                At Livora, we believe your home should be a reflection of who you are elegant, functional, and uniquely yours. We specialize in modular kitchens, wardrobes, false ceilings, pooja rooms, dining tables, TV units, study tables, crockery units, beds, and dressing tables all designed to maximize space and elevate your everyday living.
-              </p>
-              
-            </div>
-          </div>
-        </section>
+    <>
+      {/* Structured Data for About Page */}
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "@id": "https://livora.design#organization",
+          "name": "Livora Interior Design",
+          "alternateName": "Livora Interiors",
+          "url": "https://livora.design",
+          "logo": "https://livora.design/logo.png",
+          "description": "Leading interior design company in Hyderabad specializing in modular kitchens, wardrobes, false ceilings, and custom furniture solutions.",
+          "foundingDate": "2020",
+          "areaServed": {
+            "@type": "GeoCircle",
+            "geoMidpoint": {
+              "@type": "GeoCoordinates",
+              "latitude": "17.3850",
+              "longitude": "78.4867"
+            },
+            "geoRadius": "50000"
+          },
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Hyderabad",
+            "addressLocality": "Hyderabad",
+            "addressRegion": "Telangana",
+            "postalCode": "500001",
+            "addressCountry": "IN"
+          },
+          "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+91-XXXXXXXXXX",
+            "contactType": "customer service",
+            "areaServed": "IN",
+            "availableLanguage": ["English", "Hindi", "Telugu"]
+          },
+          "sameAs": [
+            "https://www.instagram.com/livora.interiors",
+            "https://www.facebook.com/LivoraInteriors",
+            "https://www.linkedin.com/company/livora-interiors"
+          ],
+          "hasCredential": {
+            "@type": "EducationalOccupationalCredential",
+            "name": "Licensed Interior Design Firm",
+            "credentialCategory": "Professional License"
+          },
+          "knowsAbout": [
+            "Interior Design",
+            "Modular Kitchen Design",
+            "Wardrobe Design",
+            "False Ceiling Design",
+            "Custom Furniture",
+            "Space Planning",
+            "3D Visualization"
+          ],
+          "makesOffer": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Interior Design Consultation",
+                "description": "Professional interior design consultation services"
+              }
+            }
+          ],
+          "serviceType": "Interior Design Services",
+          "slogan": "Transforming Spaces, Enriching Lives"
+        })}
+      </script>
 
-        {/* Our Vision and Mission */}
-        <section className="py-28 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10 -z-10"></div>
-          <div className="container mx-auto px-4 relative z-10">
-            <div className="text-center mb-20 space-y-6 animate-fade-in">
-              <div className="inline-flex items-center gap-3 bg-secondary/10 backdrop-blur-sm rounded-full py-2 px-6 border border-secondary/20 mb-4">
-                <div className="w-3 h-3 rounded-full bg-secondary animate-pulse"></div>
-                <span className="text-sm font-bold text-secondary">Our Purpose</span>
-              </div>
-              <h2 className="text-4xl md:text-5xl font-bold text-primary font-playfair mb-6">Vision & Mission</h2>
-              <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-                The driving forces behind everything we create
-              </p>
-              <div className="w-32 h-1 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full"></div>
-            </div>
-            
-            <div className="max-w-6xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-8">
-                <Card className="group border-0 bg-background/80 backdrop-blur-xl shadow-2xl hover:shadow-3xl rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-3">
-                  <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10"></div>
-                  <CardContent className="p-10 space-y-6">
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-500">
-                        <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center transition-all duration-500 group-hover:bg-secondary/20 group-hover:rotate-12">
-                          <Eye className="w-6 h-6 text-secondary transition-all duration-500 group-hover:scale-110" />
-                        </div>
-                      </div>
-                      <h3 className="text-3xl font-bold text-primary font-playfair">Our Vision</h3>
-                    </div>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      To redefine modern living by offering intelligent, space-efficient, and aesthetically pleasing furniture solutions that make every home smarter and more comfortable.
-                    </p>
-                  </CardContent>
-                </Card>
-                
-                <Card className="group border-0 bg-background/80 backdrop-blur-xl shadow-2xl hover:shadow-3xl rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-3">
-                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10"></div>
-                  <CardContent className="p-10 space-y-6">
-                    <div className="flex items-center gap-4">
-                      <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-500">
-                        <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-500 group-hover:bg-primary/20 group-hover:-rotate-12">
-                          <Target className="w-6 h-6 text-primary transition-all duration-500 group-hover:scale-110" />
-                        </div>
-                      </div>
-                      <h3 className="text-3xl font-bold text-primary font-playfair">Our Mission</h3>
-                    </div>
-                    <p className="text-lg text-muted-foreground leading-relaxed">
-                      To deliver customized interior solutions that combine creativity, practicality, and cutting-edge technology — making quality design accessible to everyone.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Values */}
-        <section className="py-20 bg-muted/30">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center space-y-4 mb-16 animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold text-primary font-playfair">Our Values</h2>
-              <p className="text-lg text-muted-foreground">
-                The principles that guide everything we do
-              </p>
-              <div className="w-24 h-1 bg-secondary mx-auto rounded-full"></div>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {values.map((value, index) => {
-                const Icon = value.icon;
-                return (
-                  <Card key={index} className="hover:shadow-[var(--warm-glow)] transition-all duration-300 hover:-translate-y-1 group border-0 bg-background/50 backdrop-blur-sm">
-                    <CardContent className="p-8 space-y-4">
-                      <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center transition-all duration-300 group-hover:bg-secondary/20">
-                        <Icon className="w-7 h-7 text-secondary transition-transform duration-300 group-hover:scale-110" />
-                      </div>
-                      <div className="space-y-2">
-                        <h3 className="text-xl font-semibold text-primary">{value.title}</h3>
-                        <p className="text-muted-foreground">{value.description}</p>
-                      </div>
-                    </CardContent>
-                  </Card>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10 -z-10"></div>
-          <div className="container mx-auto px-4">
-            <Card className="max-w-4xl mx-auto text-center shadow-[var(--elegant-shadow)] border-0 bg-background/80 backdrop-blur-sm relative overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 to-primary/5 -z-10"></div>
-              <CardContent className="p-12 space-y-6 relative z-10">
-                <div className="inline-flex items-center gap-2 bg-secondary/10 rounded-full py-2 px-6 mb-4">
-                  <ThumbsUp className="w-5 h-5 text-secondary" />
-                  <span className="text-sm font-medium text-secondary">Let's Work Together</span>
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-primary font-playfair">Let's Create Your Dream Home Together</h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  Ready to start your home transformation journey? Get in touch with us today!
+      <div className="min-h-screen">
+        <header>
+          <Navbar />
+        </header>
+        
+        <main className="pt-16">
+          {/* Hero Section */}
+          <section className="relative bg-gradient-to-br from-primary/5 to-secondary/5 py-20 overflow-hidden" aria-labelledby="about-hero-heading">
+            <div className="absolute inset-0 opacity-50" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4af37' fill-opacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`}} aria-hidden="true"></div>
+            <div className="container mx-auto px-4 relative z-10">
+              <div className="max-w-3xl mx-auto text-center space-y-6 animate-fade-in">
+                <h1 id="about-hero-heading" className="text-4xl md:text-6xl font-bold text-primary font-playfair">About Livora</h1>
+                <p className="text-base md:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                  At Livora, we believe your home should be a reflection of who you are elegant, functional, and uniquely yours. We specialize in modular kitchens, wardrobes, false ceilings, pooja rooms, dining tables, TV units, study tables, crockery units, beds, and dressing tables all designed to maximize space and elevate your everyday living.
                 </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
-                  <Button variant="secondary" size="lg" className="px-8 py-6 text-base font-medium group" asChild>
-                    <Link to="/contact">
-                      Contact Us
-                      <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
-                    </Link>
-                  </Button>
-                  <Button variant="outline" size="lg" className="px-8 py-6 text-base font-medium border-2" asChild>
-                    <Link to="/services">View Services</Link>
-                  </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Our Vision and Mission */}
+          <section className="py-28 relative overflow-hidden" aria-labelledby="vision-mission-heading">
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-background to-secondary/10 -z-10" aria-hidden="true"></div>
+            <div className="container mx-auto px-4 relative z-10">
+              <header className="text-center mb-20 space-y-6 animate-fade-in">
+                <div className="inline-flex items-center gap-3 bg-secondary/10 backdrop-blur-sm rounded-full py-2 px-6 border border-secondary/20 mb-4">
+                  <div className="w-3 h-3 rounded-full bg-secondary animate-pulse" aria-hidden="true"></div>
+                  <span className="text-sm font-bold text-secondary">Our Purpose</span>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        </section>
-      </main>
-      <Footer />
-    </div>
+                <h2 id="vision-mission-heading" className="text-4xl md:text-5xl font-bold text-primary font-playfair mb-6">Vision & Mission</h2>
+                <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+                  The driving forces behind everything we create
+                </p>
+                <div className="w-32 h-1 bg-gradient-to-r from-secondary to-accent mx-auto rounded-full" aria-hidden="true"></div>
+              </header>
+              
+              <div className="max-w-6xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8">
+                  <article className="group border-0 bg-background/80 backdrop-blur-xl shadow-2xl hover:shadow-3xl rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-3" role="article">
+                    <div className="absolute inset-0 bg-gradient-to-br from-secondary/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10" aria-hidden="true"></div>
+                    <CardContent className="p-10 space-y-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-secondary/20 to-secondary/5 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-500">
+                          <div className="w-10 h-10 rounded-xl bg-secondary/10 flex items-center justify-center transition-all duration-500 group-hover:bg-secondary/20 group-hover:rotate-12">
+                            <Eye className="w-6 h-6 text-secondary transition-all duration-500 group-hover:scale-110" />
+                          </div>
+                        </div>
+                        <h3 className="text-3xl font-bold text-primary font-playfair">Our Vision</h3>
+                      </div>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        To redefine modern living by offering intelligent, space-efficient, and aesthetically pleasing furniture solutions that make every home smarter and more comfortable.
+                      </p>
+                    </CardContent>
+                  </article>
+                  
+                  <article className="group border-0 bg-background/80 backdrop-blur-xl shadow-2xl hover:shadow-3xl rounded-3xl overflow-hidden transition-all duration-500 hover:-translate-y-3" role="article">
+                    <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-secondary/5 opacity-0 group-hover:opacity-100 transition-all duration-500 -z-10" aria-hidden="true"></div>
+                    <CardContent className="p-10 space-y-6">
+                      <div className="flex items-center gap-4">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary/20 to-primary/5 flex items-center justify-center flex-shrink-0 shadow-lg group-hover:shadow-xl transition-all duration-500">
+                          <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-500 group-hover:bg-primary/20 group-hover:-rotate-12">
+                            <Target className="w-6 h-6 text-primary transition-all duration-500 group-hover:scale-110" />
+                          </div>
+                        </div>
+                        <h3 className="text-3xl font-bold text-primary font-playfair">Our Mission</h3>
+                      </div>
+                      <p className="text-lg text-muted-foreground leading-relaxed">
+                        To deliver customized interior solutions that combine creativity, practicality, and cutting-edge technology — making quality design accessible to everyone.
+                      </p>
+                    </CardContent>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Our Values */}
+          <section className="py-20 bg-muted/30" aria-labelledby="our-values-heading">
+            <div className="container mx-auto px-4">
+              <header className="max-w-3xl mx-auto text-center space-y-4 mb-16 animate-fade-in">
+                <h2 id="our-values-heading" className="text-3xl md:text-4xl font-bold text-primary font-playfair">Our Values</h2>
+                <p className="text-lg text-muted-foreground">
+                  The principles that guide everything we do
+                </p>
+                <div className="w-24 h-1 bg-secondary mx-auto rounded-full" aria-hidden="true"></div>
+              </header>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                {values.map((value, index) => {
+                  const Icon = value.icon;
+                  return (
+                    <article key={index} className="hover:shadow-[var(--warm-glow)] transition-all duration-300 hover:-translate-y-1 group border-0 bg-background/50 backdrop-blur-sm" role="article">
+                      <CardContent className="p-8 space-y-4">
+                        <div className="w-14 h-14 rounded-full bg-secondary/10 flex items-center justify-center transition-all duration-300 group-hover:bg-secondary/20">
+                          <Icon className="w-7 h-7 text-secondary transition-transform duration-300 group-hover:scale-110" />
+                        </div>
+                        <div className="space-y-2">
+                          <h3 className="text-xl font-semibold text-primary">{value.title}</h3>
+                          <p className="text-muted-foreground">{value.description}</p>
+                        </div>
+                      </CardContent>
+                    </article>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+
+          {/* CTA Section */}
+          <section className="py-20 relative overflow-hidden" aria-labelledby="cta-heading">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary to-secondary opacity-10 -z-10" aria-hidden="true"></div>
+            <div className="container mx-auto px-4">
+              <Card className="max-w-4xl mx-auto text-center shadow-[var(--elegant-shadow)] border-0 bg-background/80 backdrop-blur-sm relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-r from-secondary/5 to-primary/5 -z-10" aria-hidden="true"></div>
+                <CardContent className="p-12 space-y-6 relative z-10">
+                  <div className="inline-flex items-center gap-2 bg-secondary/10 rounded-full py-2 px-6 mb-4">
+                    <ThumbsUp className="w-5 h-5 text-secondary" />
+                    <span className="text-sm font-medium text-secondary">Let's Work Together</span>
+                  </div>
+                  <h2 id="cta-heading" className="text-3xl md:text-4xl font-bold text-primary font-playfair">Let's Create Your Dream Home Together</h2>
+                  <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Ready to start your home transformation journey? Get in touch with us today!
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center pt-6">
+                    <Button variant="secondary" size="lg" className="px-8 py-6 text-base font-medium group" asChild>
+                      <Link to="/contact">
+                        Contact Us
+                        <ArrowRight className="ml-2 transition-transform group-hover:translate-x-1" />
+                      </Link>
+                    </Button>
+                    <Button variant="outline" size="lg" className="px-8 py-6 text-base font-medium border-2" asChild>
+                      <Link to="/services">View Services</Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </section>
+        </main>
+        
+        <footer>
+          <Footer />
+        </footer>
+      </div>
+    </>
   );
 };
 
